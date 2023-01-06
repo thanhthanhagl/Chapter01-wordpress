@@ -10,7 +10,7 @@ Làm báo cáo về cách thức tạo template của Wordpress và submit cho m
 2. Báo cáo sẽ được lưu trong github của account cá nhân. 
 3. Khi research, phải đảm bảo nội dung báo cáo được ghi chép lại bằng từ ngữ của bản thân, không được copy - paste từ các website tham khảo. 
 4. Đảm bảo trong báo cáo có phần giải thích cho các mục dưới đây:
-   Kháiái quát về Wordpress
+   Khái quát về Wordpress
    - Cấu tạo file nguồn (core file) của Wordpress
    - Cách thức kết nối tới database. 
    - Xử lý vòng lặp (loop) cho bài post cơ bản trong Wordpress theme. 
@@ -55,10 +55,10 @@ Mã nguồn Wordpress gồm các folders/files chính như sau:
 
 ### **2. Cách thức kết nối tới database.** 
 **Cách này hướng dẫn kết nối database với wordpress trên localhost, làm trên hosting thì tương tự như vậy**
-**- Bước 1:** Vào myPHPadmin => Tạo database mới.
-**- Bước 2:** Đặt tên database, charset (kế bên database name) -> chọn "utf8_unicode_ci",username, password
-**Bước 3:** Click "Go" để tạo database
-**Bước 4:** Mở file wp-config.php của wordpress lên, tìm đến mục thiết lập database và thay đổi thành thông tin database đã tạo bên trên.
+- **Bước 1:** Vào myPHPadmin => Tạo database mới.
+- **Bước 2:** Đặt tên database, charset (kế bên database name) -> chọn "utf8_unicode_ci",username, password
+- **Bước 3:** Click "Go" để tạo database
+- **Bước 4:** Mở file wp-config.php của wordpress lên, tìm đến mục thiết lập database và thay đổi thành thông tin database đã tạo bên trên.
 define('DB_NAME', '**tên databse**');
 define('DB_USER', '**username**');
 define('DB_PASSWORD', '**password**');
@@ -106,12 +106,12 @@ define( ‘SAVEQUERIES’, true );
 - Cấu tạo file template. Để 1 trang web wordpress hoạt đông được thì ta cần một số file template thiết yếu bên dưới.
 ![Cấu tạo file template](https://thachpham.com/wp-content/uploads/2015/07/twentyfifteen-template.jpg)
 - Trong đó: 
-+ style.css: Tập tin này không chỉ là chứa các CSS trong theme mà nó còn có chức năng khai báo thông tin của theme như tên theme, tên tác giả, số phiên bản,…nhằm có thể hiển thị trong khu vực Themes của WordPress. Nếu theme không có tập tin này thì theme không được xem là hợp lệ. Không nên xóa các thông tin về theme trong file style.css
-+ function.php: chứa những đoạn code PHP để khai báo các tính năng đặc biệt, hoặc sử dụng hàm add_theme_support() để khai báo các tính năng trong theme. functions.php không phải là template nên nó sẽ không hiển thị ra bên ngoài nhưng mà nó sẽ được thực thi, và tất cả code PHP trong đây sẽ được thực thi khi website được tải ra.
-+ index.php: là template để sử dụng cho trang chủ, mà nó còn là template gốc của website nếu như các template khác chưa được khai báo. Ví dụ nếu theme không có tập tin single.php để làm template cho trang nội dung của Post, thì nó sẽ sử dụng tập tin index.php để hiển thị. Các template khác cũng vậy.
-+ header.php: dùng để khai báo phần header của trang, bao gồm các thẻ như <html>, <head>, <body>,…Và sau đó ở các template khác, chúng ta sẽ gọi nó ra bằng template tag get_header().
-+ footer.php: cũng giống như header.php đó là được sử dụng để khai báo phần chân trang của theme. Rồi sau đó ở các template khác ta sẽ gọi nó ra bằng get_footer().
-+ sidebar.php: có thể khai báo sidebar trực tiếp vào các template khác với hàm dynamic_sidebar() nhưng nếu mình cần sử dụng sidebar ở nhiều template khác nhau thì ta nên viết code hiển thị sidebar vào tập tin sidebar.php. Rồi sau đó sẽ dùng hàm get_sidebar() để gọi template này ra.
+    + style.css: Tập tin này không chỉ là chứa các CSS trong theme mà nó còn có chức năng khai báo thông tin của theme như tên theme, tên tác giả, số phiên bản,…nhằm có thể hiển thị trong khu vực Themes của WordPress. Nếu theme không có tập tin này thì theme không được xem là hợp lệ. Không nên xóa các thông tin về theme trong file style.css
+    + function.php: chứa những đoạn code PHP để khai báo các tính năng đặc biệt, hoặc sử dụng hàm add_theme_support() để khai báo các tính năng trong theme. functions.php không phải là template nên nó sẽ không hiển thị ra bên ngoài nhưng mà nó sẽ được thực thi, và tất cả code PHP trong đây sẽ được thực thi khi website được tải ra.
+    + index.php: là template để sử dụng cho trang chủ, mà nó còn là template gốc của website nếu như các template khác chưa được khai báo. Ví dụ nếu theme không có tập tin single.php để làm template cho trang nội dung của Post, thì nó sẽ sử dụng tập tin index.php để hiển thị. Các template khác cũng vậy.
+    + header.php: dùng để khai báo phần header của trang, bao gồm các thẻ như <html>, <head>, <body>,…Và sau đó ở các template khác, chúng ta sẽ gọi nó ra bằng template tag get_header().
+    + footer.php: cũng giống như header.php đó là được sử dụng để khai báo phần chân trang của theme. Rồi sau đó ở các template khác ta sẽ gọi nó ra bằng get_footer().
+    + sidebar.php: có thể khai báo sidebar trực tiếp vào các template khác với hàm dynamic_sidebar() nhưng nếu mình cần sử dụng sidebar ở nhiều template khác nhau thì ta nên viết code hiển thị sidebar vào tập tin sidebar.php. Rồi sau đó sẽ dùng hàm get_sidebar() để gọi template này ra.
 **Các template khác trong theme**
 Các template dưới đây nó sẽ không bắt buộc mình phải tạo ra như các tập tin ở trên, nhưng nó sẽ được sử dụng nếu như ta có khai báo. Template nào không khai báo thì nó sẽ sử dụng template cấp cao hơn. Ví dụ nếu single-child.php không khai báo thì nó sẽ sử dụng single.php.
 #### **4.1 Template hiển thị trang lưu trữ**
@@ -158,7 +158,6 @@ Sự khác nhau giữa get_the_title() với the_title()
 
 - **get_stylesheet_directory_uri()** được dùng để hiển thị hình ảnh được lưu trữ bên trong thư mục /images bên trong thư mục của child theme.
 - **get_stylesheet_directory()** Khi bạn cần phải include file khác vào bên trong cấu trúc thư mục, bạn cần sử dụn get_stylesheet_directory(). Từ style.css trong thư mục parent theme, get_stylesheet_directory() trỏ tới thư mục trong child theme của bạn (không phải trong parent theme). Để tham chiếu đến thư mục này bạn sử dung get_template_directory() để thay thế.
-Sự khác nhau giữa get_stylesheet_directory_uri() với get_stylesheet_directory()
-- **get_stylesheet_directory_uri()** cung cấp URL, được sử dụng với các tài nguyên front-end.
-- **get_stylesheet_directory()** cung cấp đường dẫn của file.
-
+- Sự khác nhau giữa get_stylesheet_directory_uri() với get_stylesheet_directory()
+    - **get_stylesheet_directory_uri()** cung cấp URL, được sử dụng với các tài nguyên front-end.
+    - **get_stylesheet_directory()** cung cấp đường dẫn của file.
