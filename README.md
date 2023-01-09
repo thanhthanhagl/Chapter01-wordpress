@@ -103,7 +103,7 @@ define( ‘SAVEQUERIES’, true );
 ### **4. Cấu tạo file template - Các file thiết yếu.**
 - Templatecó thể được hiểu như là một cái khuôn mẫu được định dạng sẵn nhằm mục đích hiển thị nội dung trên website. 
 - Một theme trong wordpress thì gồm nhiều file template.
-- Cấu tạo file template. Để 1 trang web wordpress hoạt đông được thì ta cần một số file template thiết yếu bên dưới.
+- Cấu tạo file template. Để 1 trang web wordpress hoạt đông được thì ta cần một số file template thiết yếu bên dưới.<br>
 ![Cấu tạo file template](https://thachpham.com/wp-content/uploads/2015/07/twentyfifteen-template.jpg)
 - Trong đó: 
     + style.css: Tập tin này không chỉ là chứa các CSS trong theme mà nó còn có chức năng khai báo thông tin của theme như tên theme, tên tác giả, số phiên bản,…nhằm có thể hiển thị trong khu vực Themes của WordPress. Nếu theme không có tập tin này thì theme không được xem là hợp lệ. Không nên xóa các thông tin về theme trong file style.css
@@ -150,7 +150,7 @@ Khi sử dụng chức năng tìm kiếm trên website, kết quả tìm kiếm 
 - **get_the_title()** truy xuất tiêu đề bài đăng bằng cách sử dụng id bài đăng tùy chọn, id của nội dung cụ thể được chuyển dưới dạng tham số, id bài đăng mặc định get_the_title bằng 0 có nghĩa là hầu hết tiêu đề bài đăng hiện tại
 Sự khác nhau giữa get_the_title() với the_title()
 | the_title()    |get_the_title() |
-| -------- | ------- |
+|: -------- |: ------- |
 | Sử dụng trong vòng lặp  | Được sử dụng bên ngoài vòng lặp để truy xuất một bài post    |
 | Không cần thêm gì ở phía trước | khi viết phải thêm "echo" phía trước     |
 | Nhận ba tham số tùy chọn, hai tham số đầu tiên là tham số tùy chọn chuỗi, ví dụ: <?php the_title('<h1>','</h1>');?> và tham số thứ ba là boolean. Nếu thay tham số thứ ba bằng false sẽ khiến the_title in tiêu đề bài đăng bằng cách lặp lại. the_title sẽ chỉ xuất ra một tiêu đề bài đăng, tiêu đề mới nhất. Vì vậy, bạn sẽ không thể truy xuất các tiêu đề khác của bài đăng.  | Chỉ nhận một tham số tùy chọn là số của bài đăng (id bài đăng) hoặc đối tượng WP_Post để lấy các dữ liệu khác của bài đăng như tiêu đề của bài đăng gốc.    | 
